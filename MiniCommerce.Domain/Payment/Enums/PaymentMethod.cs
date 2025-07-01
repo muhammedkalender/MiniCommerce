@@ -1,6 +1,7 @@
 ﻿namespace MiniCommerce.Domain.Payment.Enums;
 
-public class PaymentMethod
+public enum PaymentMethod
 {
-    
+    CreditCard,
+    BankTransfer
 }
