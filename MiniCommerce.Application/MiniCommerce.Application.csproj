@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\MiniCommerce.Domain\MiniCommerce.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

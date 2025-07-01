@@ -1,6 +1,10 @@
-﻿namespace MiniCommerce.Application.Order.Services;
+﻿using MiniCommerce.Application.Order.DTOs;
+using MiniCommerce.Domain.Order.Entities;
 
-public class IOrderService
+namespace MiniCommerce.Application.Order.Services;
+
+public interface IOrderService
 {
-    
+    Task<OrderResponse> CreateAsync(OrderCreateRequest request);
+    Task<IEnumerable<OrderEntity>> GetByUserIdAsync(Guid userId);
 }
