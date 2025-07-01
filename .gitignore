@@ -1,0 +1,46 @@
+# Build outputs
+bin/
+obj/
+**/bin/
+**/obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# ASP.NET Core secrets
+**/appsettings.Development.json
+secrets.json
+
+# Resharper
+*.DotSettings.user
+
+# Log files
+*.log
+
+# Test results
+TestResults/
+**/TestResults/
+
+# NuGet packages
+*.nupkg
+packages/
+**/packages/
+
+# Others
+*.db
+*.sqlite
+*.mdf
+*.ldf
+
+# OS Files
+.DS_Store
+Thumbs.db

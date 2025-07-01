@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tiers", "Tiers", "{B56A5296-CF39-468D-BE3D-6B03A9F0BC09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endpoints", "Endpoints", "{AB080B94-5B94-4B64-B011-E5F7B1B6B8DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workers", "Workers", "{06BD3D9E-E6F3-491D-988D-CB2A0482244C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Domain", "MiniCommerce.Domain\MiniCommerce.Domain.csproj", "{989B6904-DB81-4BA7-AD13-AA4A9420417C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Infrastructure", "MiniCommerce.Infrastructure\MiniCommerce.Infrastructure.csproj", "{F335605E-18AA-4317-82DE-71475D64C0D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Application", "MiniCommerce.Application\MiniCommerce.Application.csproj", "{7E9F4F90-BABE-4030-B86A-C3C88A2650BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Api", "MiniCommerce.Api\MiniCommerce.Api.csproj", "{944DCB60-7C22-4EAE-8E24-E181E7C218E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Proccesor", "MiniCommerce.Proccesor\MiniCommerce.Proccesor.csproj", "{CEB34A36-20F3-4BE2-8DF4-1CCC1F4A3ECD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{989B6904-DB81-4BA7-AD13-AA4A9420417C} = {B56A5296-CF39-468D-BE3D-6B03A9F0BC09}
+		{F335605E-18AA-4317-82DE-71475D64C0D9} = {B56A5296-CF39-468D-BE3D-6B03A9F0BC09}
+		{7E9F4F90-BABE-4030-B86A-C3C88A2650BE} = {B56A5296-CF39-468D-BE3D-6B03A9F0BC09}
+		{944DCB60-7C22-4EAE-8E24-E181E7C218E7} = {AB080B94-5B94-4B64-B011-E5F7B1B6B8DA}
+		{CEB34A36-20F3-4BE2-8DF4-1CCC1F4A3ECD} = {06BD3D9E-E6F3-491D-988D-CB2A0482244C}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{989B6904-DB81-4BA7-AD13-AA4A9420417C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989B6904-DB81-4BA7-AD13-AA4A9420417C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989B6904-DB81-4BA7-AD13-AA4A9420417C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989B6904-DB81-4BA7-AD13-AA4A9420417C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F335605E-18AA-4317-82DE-71475D64C0D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F335605E-18AA-4317-82DE-71475D64C0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F335605E-18AA-4317-82DE-71475D64C0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F335605E-18AA-4317-82DE-71475D64C0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9F4F90-BABE-4030-B86A-C3C88A2650BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9F4F90-BABE-4030-B86A-C3C88A2650BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9F4F90-BABE-4030-B86A-C3C88A2650BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9F4F90-BABE-4030-B86A-C3C88A2650BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{944DCB60-7C22-4EAE-8E24-E181E7C218E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944DCB60-7C22-4EAE-8E24-E181E7C218E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944DCB60-7C22-4EAE-8E24-E181E7C218E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944DCB60-7C22-4EAE-8E24-E181E7C218E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB34A36-20F3-4BE2-8DF4-1CCC1F4A3ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB34A36-20F3-4BE2-8DF4-1CCC1F4A3ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB34A36-20F3-4BE2-8DF4-1CCC1F4A3ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB34A36-20F3-4BE2-8DF4-1CCC1F4A3ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
