@@ -26,6 +26,11 @@ public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSc
 
     protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
     {
+        if (Request.Path.StartsWithSegments("/swagger"))
+        {
+            return AuthenticateResult.NoResult();
+        }
+
         if (Request.Headers.TryGetValue(HeaderNames.Authorization, out var auth) || auth.Count != 0)
         {
             try
