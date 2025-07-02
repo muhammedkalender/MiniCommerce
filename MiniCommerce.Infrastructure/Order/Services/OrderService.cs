@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MiniCommerce.Application.App.Accessors;
 using MiniCommerce.Application.Cache.Services;
 using MiniCommerce.Application.Order.Declarations;
 using MiniCommerce.Application.Order.DTOs;
@@ -21,7 +22,7 @@ public partial class OrderService : IOrderService
     {
         var order = _mapper.Map<OrderEntity>(request);
         order.Id = Guid.NewGuid();
-        order.CreatedAt = DateTime.Now;
+        order.CreatedAt = DateTime.UtcNow;
 
         await _orderRepository.CreateAsync(order);
 

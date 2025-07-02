@@ -1,6 +1,9 @@
 using MiniCommerce.Api.App.Configurations;
 using MiniCommerce.Api.App.Middlewares;
-using MiniCommerce.Infrastructure.Configurations;
+using MiniCommerce.Infrastructure.Database.Configurations;
+using MiniCommerce.Infrastructure.Queue.Configurations;
+using MiniCommerce.Infrastructure.Log.Configurations;
+using MiniCommerce.Infrastructure.Cache.Configurations;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +14,7 @@ SerilogConfiguration.ConfigureSerilogAsLogger(builder.Configuration);
 builder.Host.UseSerilog();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.MapAppDependencies()
     .AddAndMapFluentValidation()
@@ -32,10 +36,9 @@ app.MapControllers();
 app.UseAuthorization();
 app.UseMiddleware<CorrelationIdMiddleware>();
 app.UseHttpsRedirection();
+app.UseSerilogRequestLogging();
 
 app.UseSwagger();
 app.UseSwaggerUI();
-
-app.UseSerilogRequestLogging();
 
 app.Run();

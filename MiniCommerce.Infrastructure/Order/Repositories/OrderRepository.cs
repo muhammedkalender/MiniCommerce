@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiniCommerce.Application.Order.Repositories;
 using MiniCommerce.Domain.Order.Entities;
-using MiniCommerce.Infrastructure.Contexts;
+using MiniCommerce.Infrastructure.Database.Contexts;
 
 namespace MiniCommerce.Infrastructure.Order.Repositories;
 

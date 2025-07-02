@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MiniCommerce.Infrastructure.Contexts;
+using MiniCommerce.Infrastructure.Database.Contexts;
 
-namespace MiniCommerce.Infrastructure.Configurations;
+namespace MiniCommerce.Infrastructure.Database.Configurations;
 
 public static class PostgresConfigurationExtensions
 {

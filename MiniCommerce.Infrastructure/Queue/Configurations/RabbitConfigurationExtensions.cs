@@ -1,9 +1,9 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MiniCommerce.Infrastructure.Models;
+using MiniCommerce.Infrastructure.Queue.Models;
 
-namespace MiniCommerce.Infrastructure.Configurations;
+namespace MiniCommerce.Infrastructure.Queue.Configurations;
 
 public static class RabbitConfigurationExtensions
 {

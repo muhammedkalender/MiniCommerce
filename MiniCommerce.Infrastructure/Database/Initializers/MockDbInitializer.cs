@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MiniCommerce.Domain.Order.Entities;
 using MiniCommerce.Domain.Payment.Enums;
-using MiniCommerce.Infrastructure.Contexts;
+using MiniCommerce.Infrastructure.Database.Contexts;
 
-namespace MiniCommerce.Infrastructure.Initializers;
+namespace MiniCommerce.Infrastructure.Database.Initializers;
 
 public static class MockDbInitializer
 {

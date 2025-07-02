@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiniCommerce.Domain.Order.Entities;
 
-namespace MiniCommerce.Infrastructure.Contexts;
+namespace MiniCommerce.Infrastructure.Database.Contexts;
 
 public class AppDbContext: DbContext
 {

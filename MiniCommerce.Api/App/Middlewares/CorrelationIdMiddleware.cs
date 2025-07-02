@@ -1,11 +1,11 @@
 ﻿using MassTransit;
+using MiniCommerce.Api.App.Declarations;
 
 namespace MiniCommerce.Api.App.Middlewares;
 
 public class CorrelationIdMiddleware
 {
     private readonly RequestDelegate _next;
-    private const string CorrelationHeader = "x-correlation-id";
 
     public CorrelationIdMiddleware(RequestDelegate next)
     {
@@ -14,19 +14,19 @@ public class CorrelationIdMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
-        if (!context.Request.Headers.TryGetValue(CorrelationHeader, out var correlationId))
+        if (!context.Request.Headers.TryGetValue(HttpDeclaration.CorrelationHeader, out var correlationId))
         {
             correlationId = Guid.NewGuid().ToString();
-            context.Request.Headers[CorrelationHeader] = correlationId;
+            context.Request.Headers[HttpDeclaration.CorrelationHeader] = correlationId;
         }
 
-        context.Items[CorrelationHeader] = correlationId;
+        context.Items[HttpDeclaration.CorrelationHeader] = correlationId;
 
         Serilog.Context.LogContext.PushProperty(MessageHeaders.CorrelationId, correlationId);
         
         context.Response.OnStarting(() =>
         {
-            context.Response.Headers[CorrelationHeader] = correlationId;
+            context.Response.Headers[HttpDeclaration.CorrelationHeader] = correlationId;
             return Task.CompletedTask;
         });
 

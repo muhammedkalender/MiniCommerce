@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MiniCommerce.Infrastructure.Configurations;
+namespace MiniCommerce.Infrastructure.Cache.Configurations;
 
 public static class RedisConfigurationExtensions
 {

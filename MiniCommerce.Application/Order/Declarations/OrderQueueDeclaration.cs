@@ -2,5 +2,7 @@
 
 public class OrderQueueDeclaration
 {
-    public const string OrderPlacedQueue = "order-placed";
+    public static readonly TimeSpan Lag = TimeSpan.FromSeconds(2);
+    
+    public const string PlacedQueue = "order-placed";
 }
