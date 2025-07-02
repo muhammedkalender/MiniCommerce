@@ -4,7 +4,8 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>dotnet-MiniCommerce.Proccesor-b85cf086-b3da-4329-8dc1-08b634adc1ce</UserSecretsId>
+        <UserSecretsId>dotnet-MiniCommerce.Processor-b85cf086-b3da-4329-8dc1-08b634adc1ce</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,5 +18,16 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MiniCommerce.Infrastructure\MiniCommerce.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Logs\log-20250704.json" />
+      <_ContentIncludedByDefault Remove="Logs\log-20250705.json" />
     </ItemGroup>
 </Project>

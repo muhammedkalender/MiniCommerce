@@ -1,11 +1,12 @@
-﻿using MiniCommerce.Application.Cache.Services;
+﻿using Microsoft.Extensions.DependencyInjection;
+using MiniCommerce.Application.Cache.Services;
 using MiniCommerce.Application.Notification.Services;
 using MiniCommerce.Application.Order.Processors;
 using MiniCommerce.Infrastructure.Cache.Services;
 using MiniCommerce.Infrastructure.Notification.Services;
-using MiniCommerce.Proccesor.Order.Processors;
+using MiniCommerce.Processor.Order.Processors;
 
-namespace MiniCommerce.Proccesor.App.Configurations;
+namespace MiniCommerce.Processor.App.Configurations;
 
 public static class AppConfigurationExtensions
 {

@@ -1,12 +1,14 @@
-﻿using MiniCommerce.Application.Cache.Services;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using MiniCommerce.Application.Cache.Services;
 using MiniCommerce.Application.Notification.Services;
 using MiniCommerce.Application.Order.Declarations;
 using MiniCommerce.Application.Order.DTOs;
 using MiniCommerce.Application.Order.Processors;
 using MiniCommerce.Domain.Notification.Enums;
-using MiniCommerce.Domain.Notification.Models;
 
-namespace MiniCommerce.Proccesor.Order.Processors;
+namespace MiniCommerce.Processor.Order.Processors;
 
 [AutoConstructor]
 public partial class OrderPlacedProcessor : IOrderPlacedProcessor

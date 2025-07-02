@@ -1,9 +1,11 @@
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using MiniCommerce.Application.Order.Declarations;
 using MiniCommerce.Infrastructure.Cache.Configurations;
 using MiniCommerce.Infrastructure.Log.Configurations;
 using MiniCommerce.Infrastructure.Queue.Configurations;
-using MiniCommerce.Proccesor.App.Configurations;
-using MiniCommerce.Proccesor.Order.Consumers;
+using MiniCommerce.Processor.App.Configurations;
+using MiniCommerce.Processor.Order.Consumers;
 using Serilog;
 
 var builder = Host.CreateApplicationBuilder(args);

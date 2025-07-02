@@ -1,10 +1,11 @@
-﻿using MassTransit;
-using MiniCommerce.Application.Cache.Services;
-using MiniCommerce.Application.Order.Declarations;
+﻿using System;
+using System.Threading.Tasks;
+using MassTransit;
+using Microsoft.Extensions.Logging;
 using MiniCommerce.Application.Order.DTOs;
 using MiniCommerce.Application.Order.Processors;
 
-namespace MiniCommerce.Proccesor.Order.Consumers;
+namespace MiniCommerce.Processor.Order.Consumers;
 
 [AutoConstructor]
 public partial class OrderPlacedConsumer : IConsumer<OrderPlacedMessage>

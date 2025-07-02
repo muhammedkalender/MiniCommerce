@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Application", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Api", "MiniCommerce.Api\MiniCommerce.Api.csproj", "{944DCB60-7C22-4EAE-8E24-E181E7C218E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Proccesor", "MiniCommerce.Proccesor\MiniCommerce.Proccesor.csproj", "{CEB34A36-20F3-4BE2-8DF4-1CCC1F4A3ECD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Processor", "MiniCommerce.Processor\MiniCommerce.Processor.csproj", "{CEB34A36-20F3-4BE2-8DF4-1CCC1F4A3ECD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
