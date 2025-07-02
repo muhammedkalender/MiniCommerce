@@ -6,5 +6,5 @@ namespace MiniCommerce.Application.Order.Services;
 public interface IOrderService
 {
     Task<OrderResponse> CreateAsync(OrderCreateRequest request);
-    Task<IEnumerable<OrderEntity>> GetByUserIdAsync(Guid userId);
+    Task<IEnumerable<OrderResponse>> GetByUserIdAsync(Guid userId);
 }

@@ -8,8 +8,12 @@ using MiniCommerce.Api.App.Auth.Services;
 using MiniCommerce.Api.App.Auth.Signatures;
 using MiniCommerce.Api.App.Conventions;
 using MiniCommerce.Api.Order.Validators;
+using MiniCommerce.Application.Cache.Services;
+using MiniCommerce.Application.Order.Producer;
 using MiniCommerce.Application.Order.Repositories;
 using MiniCommerce.Application.Order.Services;
+using MiniCommerce.Infrastructure.Cache.Services;
+using MiniCommerce.Infrastructure.Order.Producer;
 using MiniCommerce.Infrastructure.Order.Repositories;
 using MiniCommerce.Infrastructure.Order.Services;
 
@@ -19,6 +23,9 @@ public static class AppConfigurationExtensions
 {
     public static IServiceCollection MapAppDependencies(this IServiceCollection services)
     {
+        services.AddTransient<IOrderProducer, OrderProducer>();
+        
+        services.AddTransient<ICacheService, RedisCacheService>();
         services.AddTransient<IOrderService, OrderService>();
         services.AddTransient<IOrderRepository, OrderRepository>();
 

@@ -1,4 +1,6 @@
-﻿namespace MiniCommerce.Api.App.Middlewares;
+﻿using MassTransit;
+
+namespace MiniCommerce.Api.App.Middlewares;
 
 public class CorrelationIdMiddleware
 {
@@ -9,7 +11,7 @@ public class CorrelationIdMiddleware
     {
         _next = next;
     }
-    
+
     public async Task InvokeAsync(HttpContext context)
     {
         if (!context.Request.Headers.TryGetValue(CorrelationHeader, out var correlationId))
@@ -19,6 +21,8 @@ public class CorrelationIdMiddleware
         }
 
         context.Items[CorrelationHeader] = correlationId;
+
+        Serilog.Context.LogContext.PushProperty(MessageHeaders.CorrelationId, correlationId);
         
         context.Response.OnStarting(() =>
         {

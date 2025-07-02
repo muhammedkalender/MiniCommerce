@@ -34,6 +34,7 @@ TestResults/
 *.nupkg
 packages/
 **/packages/
+**/Logs/
 
 # Others
 *.db

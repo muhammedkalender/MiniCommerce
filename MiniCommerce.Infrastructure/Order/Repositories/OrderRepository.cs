@@ -1,17 +1,26 @@
-﻿using MiniCommerce.Application.Order.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using MiniCommerce.Application.Order.Repositories;
 using MiniCommerce.Domain.Order.Entities;
+using MiniCommerce.Infrastructure.Contexts;
 
 namespace MiniCommerce.Infrastructure.Order.Repositories;
 
-public class OrderRepository : IOrderRepository
+[AutoConstructor]
+public partial class OrderRepository : IOrderRepository
 {
-    public Task<OrderEntity> CreateAsync(OrderEntity entity)
+    private readonly AppDbContext _context;
+
+    public async Task<OrderEntity> CreateAsync(OrderEntity entity)
     {
-        throw new NotImplementedException();
+        _context.Orders.Add(entity);
+        await _context.SaveChangesAsync();
+        return entity;
     }
 
-    public Task<IEnumerable<OrderEntity>> GetByUserIdAsync(Guid userId)
+    public async Task<IEnumerable<OrderEntity>> GetByUserIdAsync(Guid userId)
     {
-        throw new NotImplementedException();
+        return await _context.Orders
+            .Where(o => o.UserId == userId)
+            .ToListAsync();
     }
 }
