@@ -27,18 +27,20 @@ builder.Services.MapAppDependencies()
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+// app.UseHttpsRedirection();
 
-app.MapControllers();
-app.UseAuthorization();
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<CorrelationIdMiddleware>();
-app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseSerilogRequestLogging();
 
+app.MapOpenApi();
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.MapControllers();
 
 app.Run();

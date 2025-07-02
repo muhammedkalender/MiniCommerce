@@ -26,31 +26,30 @@ services:
     image: redis:alpine
     ports:
       - "37330:6379"
-      - 
+
   api:
     build:
-      context: ./MiniCommerce.Api
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./MiniCommerce.Api/Dockerfile
     depends_on:
       - db
       - rabbitmq
       - redis
     ports:
-      - "37300:443"
-      - "37301:80"
+      - "37300:8080"
     volumes:
-      - ./logs/api:/app/log
+      - ./logs/api:/app/logs
 
   processor:
     build:
-      context: ./MiniCommerce.Processor
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./MiniCommerce.Processor/Dockerfile
     depends_on:
       - db
       - rabbitmq
       - redis
     volumes:
-      - ./logs/processor:/app/log
+      - ./logs/processor:/app/logs
 
 volumes:
   pgdata:

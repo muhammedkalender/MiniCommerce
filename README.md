@@ -24,3 +24,5 @@ Guid.Parse("44444444-4444-4444-4444-444444444444")
 Default credential
 admin
 1234
+
+docker-compose up --build -d

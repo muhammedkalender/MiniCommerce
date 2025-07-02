@@ -1,13 +1,16 @@
-﻿using System.Text.Json;
+﻿using System.Runtime.InteropServices.JavaScript;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using MiniCommerce.Api.App.Accessors;
 using MiniCommerce.Api.App.Auth.Handlers;
 using MiniCommerce.Api.App.Auth.Services;
 using MiniCommerce.Api.App.Auth.Signatures;
 using MiniCommerce.Api.App.Conventions;
+using MiniCommerce.Api.App.Models;
 using MiniCommerce.Api.Order.Validators;
 using MiniCommerce.Application.App.Accessors;
 using MiniCommerce.Application.Cache.Services;
@@ -42,6 +45,26 @@ public static class AppConfigurationExtensions
             {
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+            })
+            .ConfigureApiBehaviorOptions(options =>
+            {
+                options.InvalidModelStateResponseFactory = context =>
+                {
+                    var errors = context.ModelState
+                        .Where(e => e.Value?.Errors.Count > 0)
+                        .Select(e => new
+                        {
+                            field = ToCamelCase(e.Key),
+                            errors = e.Value?.Errors.Select(x => x.ErrorMessage)
+                        });
+
+                    return new BadRequestObjectResult(new ErrorModel()
+                    {
+                        Status = StatusCodes.Status400BadRequest,
+                        Message = "Request validation failed",
+                        Detail = errors
+                    });
+                };
             });
 
         return services;
@@ -63,5 +86,13 @@ public static class AppConfigurationExtensions
         services.AddScoped<IBasicAuthenticationService, BasicAuthenticationService>();
 
         return services;
+    }
+
+    private static string ToCamelCase(string input)
+    {
+        if (string.IsNullOrEmpty(input) || !char.IsUpper(input[0]))
+            return input;
+
+        return char.ToLowerInvariant(input[0]) + input.Substring(1);
     }
 }
