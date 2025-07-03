@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "cdbf924e-f3b2-4022-bc65-edcd25c6c97e",
+		"name": "MiniCommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36958796"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"{{default-user-id}}\",\r\n  \"productId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"quantity\": 10,\r\n  \"paymentMethod\": \"CreditCard\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/orders",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"productId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"quantity\": 0,\r\n  \"paymentMethod\": \"CreditCard\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/orders",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Jul 2025 11:11:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "6a4b6310-3741-42a9-812a-91d722967d40"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Request validation failed\",\n    \"detail\": [\n        {\n            \"field\": \"quantity\",\n            \"errors\": [\n                \"quantity is required.\",\n                \"quantity must be more than 0.\"\n            ]\n        }\n    ]\n}"
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"productId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"quantity\": 10,\r\n  \"paymentMethod\": \"CreditCard\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/orders",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Jul 2025 18:12:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "9a69b502-5fd8-4a36-b5eb-98b2c941bb0f"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"e40a681d-82e9-49ef-9fb5-a8ee61cce3da\",\n    \"userId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"productId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n    \"quantity\": 10,\n    \"paymentMethod\": \"CreditCard\",\n    \"createdAt\": \"2025-07-02T20:12:13.9070834Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Orders By User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/orders/{{default-user-id}}",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders",
+								"{{default-user-id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/orders/{{default-user-id}}",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"orders",
+										"{{default-user-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 3 Jul 2025 18:59:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "93f6e63b-cf47-4a7f-9903-d20b830037a4"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaa0001\",\n        \"userId\": \"11111111-1111-1111-1111-111111111111\",\n        \"productId\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbb0001\",\n        \"quantity\": 1,\n        \"paymentMethod\": \"CreditCard\",\n        \"createdAt\": \"2025-01-02T13:21:29.842944Z\"\n    },\n    {\n        \"id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaa0002\",\n        \"userId\": \"11111111-1111-1111-1111-111111111111\",\n        \"productId\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbb0002\",\n        \"quantity\": 2,\n        \"paymentMethod\": \"BankTransfer\",\n        \"createdAt\": \"2025-01-05T13:21:29.842945Z\"\n    },\n    {\n        \"id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaa0009\",\n        \"userId\": \"11111111-1111-1111-1111-111111111111\",\n        \"productId\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbb0009\",\n        \"quantity\": 2,\n        \"paymentMethod\": \"BankTransfer\",\n        \"createdAt\": \"2025-01-03T13:21:29.842948Z\"\n    },\n    {\n        \"id\": \"827b1c30-74ba-49a4-88ea-29a9e803d2d8\",\n        \"userId\": \"11111111-1111-1111-1111-111111111111\",\n        \"productId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n        \"quantity\": 10,\n        \"paymentMethod\": \"CreditCard\",\n        \"createdAt\": \"2025-01-02T13:58:40.521885Z\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{pass}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{user}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

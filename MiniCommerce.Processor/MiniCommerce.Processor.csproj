@@ -25,9 +25,4 @@
         <Link>.dockerignore</Link>
       </Content>
     </ItemGroup>
-
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Logs\log-20250704.json" />
-      <_ContentIncludedByDefault Remove="Logs\log-20250705.json" />
-    </ItemGroup>
 </Project>

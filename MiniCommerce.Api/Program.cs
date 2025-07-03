@@ -28,9 +28,8 @@ builder.Services.MapAppDependencies()
 var app = builder.Build();
 
 // app.UseHttpsRedirection();
-
-app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<CorrelationIdMiddleware>();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

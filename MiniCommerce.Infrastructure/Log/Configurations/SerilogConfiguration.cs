@@ -12,7 +12,6 @@ public static class SerilogConfiguration
         Serilog.Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(serilogSection)
             .Enrich.FromLogContext()
-            .Enrich.WithCorrelationId()
             .CreateLogger();
     }
 }
