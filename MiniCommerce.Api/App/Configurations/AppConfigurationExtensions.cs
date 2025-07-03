@@ -40,7 +40,7 @@ public static class AppConfigurationExtensions
 
     public static IServiceCollection ConfigureControllersAndJsonSettings(this IServiceCollection services)
     {
-        services.AddControllers(options => { options.Conventions.Add(new SnakeCaseControllerNameConvention()); })
+        services.AddControllers(options => { options.Conventions.Add(new KebabCaseControllerNameConvention()); })
             .AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
